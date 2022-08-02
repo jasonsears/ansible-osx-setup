@@ -41,6 +41,7 @@
         - openvpn-connect
         - zoom
         - powershell
+        - amazon-workspaces
 
     - name: "Install homebrew packages"
       community.general.homebrew:
