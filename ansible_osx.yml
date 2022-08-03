@@ -55,7 +55,6 @@
             "bfg",
             "coreutils",
             "curl",
-            "dbt@0.18.0",
             "direnv",
             "docker",
             "fzf",
