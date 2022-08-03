@@ -64,6 +64,7 @@
             "helm",
             "htop",
             "imagemagick@6",
+            "jq",
             "kubectx",
             "kubernetes-cli",
             "kubernetes-helm",
