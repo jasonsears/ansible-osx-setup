@@ -22,7 +22,8 @@
       community.general.homebrew_tap:
         name:
           [
-            warrensbox/tap,
+            homebrew/cask-drivers,
+            warrensbox/tap,            
           ]
 
     - name: Install core packages via brew casks
