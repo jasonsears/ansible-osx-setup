@@ -63,9 +63,10 @@ archive_mrd() {
 }
 
 archive_signatures() {
-  if [[ -d "Library/Containers/com.microsoft.Outlook/Data/Library/Caches/Signatures" ]]; then
+  if [[ -d "Library/Group Containers/UBF8T346G9.Office/Outlook/Outlook 15 Profiles/Main Profile/Data/Signatures" ]]; then
     printf '%s%s%s\n' $green "Archiving Outlook Signatures folder..." $fin
-    tar -cvf $DEST/signatures.tar.gz "Library/Containers/com.microsoft.Outlook/Data/Library/Caches/Signatures"
+    tar -cvf $DEST/signatures.tar.gz "Library/Group Containers/UBF8T346G9.Office/Outlook/Outlook 15 Profiles/Main Profile/Data/Signatures" \
+                                     "Library/Group Containers/UBF8T346G9.Office/Outlook/Outlook 15 Profiles/Main Profile/Data/Signature Attachments"
   fi
 }
 
@@ -76,12 +77,13 @@ archive_teams_bgs()  {
   fi
 }
 
-archive_zoom_settings()  {
-  if [[ -d "Library/Application Support/zoom.us" ]]; then
-    printf '%s%s%s\n' $green "Archiving Zoom settings folder..." $fin
-    tar -cvf $DEST/zoom.tar.gz "Library/Application Support/zoom.us"
-  fi
-}
+# Didn't work, added backgrounds to my account online
+# archive_zoom_settings()  {
+#   if [[ -d "Library/Application Support/zoom.us" ]]; then
+#     printf '%s%s%s\n' $green "Archiving Zoom settings folder..." $fin
+#     tar -cvf $DEST/zoom.tar.gz "Library/Application Support/zoom.us"
+#   fi
+# }
 
 archive_openvpn_settings()  {
   if [[ -d "Library/Application Support/OpenVPN Connect" ]]; then
@@ -99,9 +101,8 @@ archive() {
   archive_mrd &&
   archive_signatures &&
   archive_teams_bgs &&
-  archive_zoom_settings &&
+  # archive_zoom_settings &&
   archive_openvpn_settings &&
-  cp $0 $DEST 
   printf '%s%s%s\n' $green "Archiving complete" $fin 
 }
 
@@ -114,7 +115,7 @@ unarchive() {
   tar -xvf $DEST/mrd.tar.gz
   tar -xvf $DEST/signatures.tar.gz
   tar -xvf $DEST/teamsbg.tar.gz
-  tar -xvf $DEST/zoom.tar.gz
+  # tar -xvf $DEST/zoom.tar.gz
   tar -xvf $DEST/openvpn.tar.gz
   printf '%s%s%s\n' $green "unarchiving complete" $fin   
 }
