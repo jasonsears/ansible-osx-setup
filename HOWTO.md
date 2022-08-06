@@ -116,8 +116,8 @@ you risk them being overwritten during the unarchive execution.
 
 ### Prerequisites
 
-- New Mac has to have your OneDrive configured
-- An Outlook account profile must be setup
+- OneDrive configured and Archive folder synced
+- Outlook account profile setup
 
 1. Open OneDrive from Applications or Launcher, it will initialize and restart.
    It will prompt you for your Email Address, enter your work email and follow
