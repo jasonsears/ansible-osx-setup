@@ -1,15 +1,16 @@
 
 # New Setup or Reset Mac from Intune
 
-
-
-## All New or Reset Intune Registered Mac Steps
+## All New or Reset Intune Registered Mac Initial Setup
 
 ### Pre-requisites
 
 - You've completed the initial Microsoft SSO account setup and can login to
   https://myaccount.microsoft.com with your company provided credentials
-- You've a managed Apple ID associated with your company provided Microsoft account
+- You've a managed Apple ID associated with your company provided Microsoft account.
+  If you are not sure, you can confirm your managed ID by logging in at
+  https://appleid.apple.com/ where you should be redirected to
+  https://login.microsoftonline.com.
 - You've read thru the steps below and know whether you want to use Ansible to
   deploy any additional software or migrate archived settings from your existing
   Mac
@@ -95,7 +96,7 @@ The target settings are:
 
 - SSH Keys located in ~/.ssh
 - Fonts located in ~/Library/Fonts
-- Microsoft Remote Desktop Connection settings
+- Microsoft Remote Desktop application settings
 - Microsoft Teams backgrounds
 - Microsoft Outlook signatures - note the steps below when restoring
 - OpenVPN profiles
@@ -110,4 +111,38 @@ Before executing the script, review the
 
 ## Restore settings from previous Mac using archive.sh script
 
-1. 
+**WARNING**: If any changes were made following the Ansible playbook execution,
+you risk them being overwritten during the unarchive execution.
+
+### Prerequisites
+
+- New Mac has to have your OneDrive configured
+- An Outlook account profile must be setup
+
+1. Open OneDrive from Applications or Launcher, it will initialize and restart.
+   It will prompt you for your Email Address, enter your work email and follow
+   the prompts to sign in and setup with the default folder location.
+
+   When prompted to start syncing, press the "OK" button. Continue thru the setup
+   wizard and then open the OneDrive folder. Once the Archive folder and subfolders
+   are available, you may continue with the process.
+2. Open Outlook and enter work email address to complete initial profile setup.
+   Once you see email begin downloading, close Outlook from the menu bar. 
+3. Open Terminal or return to your existing open window, enter the following:
+
+        cd ~/ansible-osx-setup
+        bin/archive.sh -u <archive name>
+
+   When prompted, press "OK" button to allow Terminal to access OneDrive files
+
+4. Confirm settings:
+    - List contents of .ssh folder: `ls ~/.ssh`
+    - List contents of Fonts folder: `ls ~/Library/Fonts`
+    - Open Microsoft Remote Desktop application
+    - Open Teams, login and initiate a and confirm backgrounds
+    - Open Outlook, press "Repair" button if prompted</br>
+      **TODO:** The signature replacement is not complete. You can copy the
+      archived signature file over top of the existing default one to avoid
+      having to recreate it.
+
+          cd ~/Library/Group Containers/UBF8T346G9.Office/Outlook/Outlook 15 Profiles/Main Profile/Data/Signatures

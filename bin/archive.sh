@@ -113,6 +113,7 @@ unarchive() {
   tar -xvf $DEST/ssh.tar.gz
   tar -xvf $DEST/fonts.tar.gz
   tar -xvf $DEST/mrd.tar.gz
+  #rm -rf Library/Group Containers/UBF8T346G9.Office/Outlook/Outlook 15 Profiles/Main Profile/Data/*.sqlite*
   tar -xvf $DEST/signatures.tar.gz
   tar -xvf $DEST/teamsbg.tar.gz
   # tar -xvf $DEST/zoom.tar.gz
