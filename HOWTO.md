@@ -139,7 +139,7 @@ you risk them being overwritten during the unarchive execution.
     - List contents of .ssh folder: `ls ~/.ssh`
     - List contents of Fonts folder: `ls ~/Library/Fonts`
     - Open Microsoft Remote Desktop application
-    - Open Teams, login and initiate a and confirm backgrounds
+    - Open Teams, login and initiate a meeting and confirm backgrounds
     - Open Outlook, press "Repair" button if prompted</br>
       **TODO:** The signature replacement is not complete. You can copy the
       archived signature file over top of the existing default one to avoid
