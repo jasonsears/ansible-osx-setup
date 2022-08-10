@@ -31,6 +31,7 @@
         name: "{{ item }}"
       ignore_errors: yes
       with_items:
+        - amazon-workspaces
         - android-sdk
         - android-studio
         - displaylink
@@ -38,12 +39,12 @@
         - google-chrome
         - iterm2
         - ngrok
+        - openvpn-connect
+        - postman
+        - powershell        
         - sublime-text
         - visual-studio-code
-        - openvpn-connect
         - zoom
-        - powershell
-        - amazon-workspaces
 
     - name: "Install homebrew packages"
       community.general.homebrew:
