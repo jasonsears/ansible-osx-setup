@@ -75,6 +75,7 @@
             "libyaml",
             "mas",
             "minikube",
+            "neo4j",
             "openssl",
             "pkg-config",
             "postgresql",
