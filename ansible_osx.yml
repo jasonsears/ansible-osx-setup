@@ -38,6 +38,7 @@
         - docker
         - google-chrome
         - iterm2
+        - lens
         - neo4j
         - ngrok
         - openvpn-connect
