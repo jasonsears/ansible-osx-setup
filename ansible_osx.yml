@@ -85,6 +85,7 @@
             "rcm",
             "readline",
             "redis",
+            "rust",
             "sqlite3",
             "tfswitch",
             "tmux",
