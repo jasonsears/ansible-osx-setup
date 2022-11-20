@@ -64,6 +64,7 @@
             "docker",
             "fzf",
             "gnu-time",
+            "go",
             "gpg",
             "helm",
             "htop",
