@@ -23,7 +23,8 @@
         name:
           [
             homebrew/cask-drivers,
-            warrensbox/tap,            
+            warrensbox/tap,
+            aws/tap,            
           ]
 
     - name: Install core packages via brew casks
@@ -55,6 +56,7 @@
             "autoconf",
             "automake",
             "aws-iam-authenticator",
+            "aws-sam-cli",
             "awscli",
             "azure-cli",
             "bfg",
