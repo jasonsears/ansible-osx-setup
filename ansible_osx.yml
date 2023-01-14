@@ -30,8 +30,8 @@
     - name: Install core packages via brew casks
       community.general.homebrew_cask:
         name: "{{ item }}"
+        upgrade: yes
       ignore_errors: yes
-      state: latest
       with_items:
         - amazon-workspaces
         - android-sdk
