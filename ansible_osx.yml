@@ -61,6 +61,7 @@
             "awscli",
             "azure-cli",
             "bfg",
+            "cloc",
             "coreutils",
             "curl",
             "direnv",
