@@ -4,3 +4,6 @@ collections:
     type: git
     version: main
   - name: geerlingguy.mac
+
+roles:
+  - name: elliotweiser.osx-command-line-tools
