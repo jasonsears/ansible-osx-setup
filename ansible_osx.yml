@@ -24,7 +24,7 @@
           [
             homebrew/cask-drivers,
             warrensbox/tap,
-            aws/tap,            
+            aws/tap,           
           ]
 
     - name: Install core packages via brew casks
@@ -67,6 +67,7 @@
             "curl",
             "direnv",
             "docker",
+            "fluxcd/tap/flux",
             "fzf",
             "gh",
             "gnu-time",
