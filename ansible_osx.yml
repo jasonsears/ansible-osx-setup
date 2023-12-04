@@ -39,6 +39,7 @@
         - displaylink
         - docker
         - google-chrome
+        - herd
         - iterm2
         - lens
         - neo4j
@@ -63,10 +64,12 @@
             "azure-cli",
             "bfg",
             "cloc",
+            "composer",
             "coreutils",
             "curl",
             "direnv",
             "docker",
+            "dotnet",
             "fluxcd/tap/flux",
             "fzf",
             "gh",
@@ -77,6 +80,7 @@
             "helm",
             "htop",
             "imagemagick@6",
+            "java11",
             "jq",
             "kind",
             "kubectx",
@@ -87,8 +91,10 @@
             "libyaml",
             "mas",
             "minikube",
+            "nvm",
             "octant",
             "openssl",
+            "php",
             "pkg-config",
             "postgresql",
             "pyenv",
@@ -241,7 +247,8 @@
         source /Users/{{ lookup('env', 'USER') }}/.asdf/asdf.sh
         bash /Users/{{ lookup('env', 'USER') }}/.asdf/plugins/nodejs/bin/import-release-team-keyring
         asdf install nodejs 16.4.2
-        asdf global nodejs 16.4.2
+        asdf install nodejs 20.9.0
+        asdf global nodejs 20.9.0
 
 #     - name: "Install default erlang"
 #       shell: |
