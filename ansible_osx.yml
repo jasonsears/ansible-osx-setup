@@ -29,8 +29,8 @@
     - name: Install core packages via brew casks
       community.general.homebrew_cask:
         name: "{{ item }}"
-        upgrade: yes
-      ignore_errors: no
+        upgrade: no
+      ignore_errors: yes
       with_items:
         # - amazon-workspaces
         - android-sdk
@@ -40,6 +40,7 @@
         - google-chrome
         # - herd
         # - iterm2
+        - lastpass
         # - lens
         # - neo4j
         # - ngrok
