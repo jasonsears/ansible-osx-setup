@@ -22,7 +22,6 @@
       community.general.homebrew_tap:
         name:
           [
-            homebrew/cask-drivers,
             warrensbox/tap,
             aws/tap,           
           ]
