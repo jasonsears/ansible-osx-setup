@@ -163,45 +163,45 @@
         owner: "{{ lookup('env', 'USER') }}"
         force: yes
 
-    # Add something which ensures path is set here
-    - name: Install VSCode extensions
-      shell: code --install-extension {{ item }}
-      with_items:
-        - apollographql.vscode-apollo
-        - eamodio.gitlens
-        - ms-vscode-remote.vscode-remote-extensionpack
-        - richie5um2.vscode-sort-json
-        - Tyriar.sort-lines
-        - wholroyd.jinja
-        - streetsidesoftware.code-spell-checker
-        - github.vscode-pull-request-github
-        - amazonwebservices.aws-toolkit-vscode
-        - ms-dotnettools.vscode-dotnet-runtime
-        - ms-vscode.vscode-node-azure-pack
-        - ms-azuretools.vscode-docker
-        - github.remotehub
-        - golang.go
-        - ms-toolsai.jupyter
-        - ms-toolsai.jupyter-keymap
-        - davidanson.vscode-markdownlint
-        - esbenp.prettier-vscode
-        - argutec.argutec-azure-repos
-        - bencoleman.armview
-        - ms-vscode.azure-account
-        - ms-vscode.powershell
-        - ms-vscode.azurecli
-        - ms-kubernetes-tools.vscode-aks-tools
-        - ms-azuretools.vscode-logicapps
-        - ms-azuretools.vscode-azurelogicapps
-        - ms-azure-devops.azure-pipelines
-        - aaron-bond.better-comments
-        - donjayamanne.git-extension-pack
-        - codezombiech.gitignore
-        - hashicorp.terraform
-        - mongodb.mongodb-vscode
-        - ms-python.vscode-pylance
-        - ms-python.python
-        - redhat.vscode-yaml
+    # # Add something which ensures path is set here
+    # - name: Install VSCode extensions
+    #   shell: code --install-extension {{ item }}
+    #   with_items:
+    #     - apollographql.vscode-apollo
+    #     - eamodio.gitlens
+    #     - ms-vscode-remote.vscode-remote-extensionpack
+    #     - richie5um2.vscode-sort-json
+    #     - Tyriar.sort-lines
+    #     - wholroyd.jinja
+    #     - streetsidesoftware.code-spell-checker
+    #     - github.vscode-pull-request-github
+    #     - amazonwebservices.aws-toolkit-vscode
+    #     - ms-dotnettools.vscode-dotnet-runtime
+    #     - ms-vscode.vscode-node-azure-pack
+    #     - ms-azuretools.vscode-docker
+    #     - github.remotehub
+    #     - golang.go
+    #     - ms-toolsai.jupyter
+    #     - ms-toolsai.jupyter-keymap
+    #     - davidanson.vscode-markdownlint
+    #     - esbenp.prettier-vscode
+    #     - argutec.argutec-azure-repos
+    #     - bencoleman.armview
+    #     - ms-vscode.azure-account
+    #     - ms-vscode.powershell
+    #     - ms-vscode.azurecli
+    #     - ms-kubernetes-tools.vscode-aks-tools
+    #     - ms-azuretools.vscode-logicapps
+    #     - ms-azuretools.vscode-azurelogicapps
+    #     - ms-azure-devops.azure-pipelines
+    #     - aaron-bond.better-comments
+    #     - donjayamanne.git-extension-pack
+    #     - codezombiech.gitignore
+    #     - hashicorp.terraform
+    #     - mongodb.mongodb-vscode
+    #     - ms-python.vscode-pylance
+    #     - ms-python.python
+    #     - redhat.vscode-yaml
 
     - git:
         repo: https://github.com/asdf-vm/asdf.git
