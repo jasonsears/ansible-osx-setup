@@ -29,13 +29,13 @@
     - name: Install core packages via brew casks
       community.general.homebrew_cask:
         name: "{{ item }}"
-        upgrade: no
+        upgrade: yes
       ignore_errors: no
       with_items:
         # - amazon-workspaces
         - android-sdk
         # - android-studio
-        # - displaylink
+        - displaylink
         - docker
         - google-chrome
         # - herd
