@@ -32,24 +32,24 @@
         upgrade: yes
       ignore_errors: yes
       with_items:
-        - amazon-workspaces
+        # - amazon-workspaces
         - android-sdk
-        - android-studio
-        - displaylink
-        - docker
+        # - android-studio
+        # - displaylink
+        # - docker
         - google-chrome
-        - herd
-        - iterm2
-        - lens
-        - neo4j
-        - ngrok
-        - openvpn-connect
-        - pgadmin4
+        # - herd
+        # - iterm2
+        # - lens
+        # - neo4j
+        # - ngrok
+        # - openvpn-connect
+        # - pgadmin4
         - postman
-        - powershell        
-        - sublime-text
+        # - powershell        
+        # - sublime-text
         - visual-studio-code
-        - zoom
+        # - zoom
 
     - name: "Install homebrew packages"
       community.general.homebrew:
