@@ -56,7 +56,7 @@
         name:
           [
             "autoconf",
-            # "automake",
+            "automake",
             # "aws-iam-authenticator",
             # "aws-sam-cli",
             # "awscli",
@@ -67,15 +67,15 @@
             # "coreutils",
             # "curl",
             # "direnv",
-            # "docker",
-            # "dotnet",
+            "docker",
+            "dotnet",
             # "fluxcd/tap/flux",
             # "fzf",
             # "gh",
             # "gnu-time",
             # "go",
             # "gnu-sed",
-            # "gpg",
+            "gpg",
             # "helm",
             # "htop",
             # "imagemagick@6",
@@ -92,7 +92,7 @@
             # "minikube",
             # "nvm",
             # "octant",
-            # "openssl",
+            "openssl",
             # "php",
             # "pkg-config",
             # "postgresql",
@@ -112,7 +112,7 @@
             # "xz",
             # "yarn",
             # "zlib",
-            # "zsh",
+             "zsh",
           ]
         state: latest
         update_homebrew: yes
