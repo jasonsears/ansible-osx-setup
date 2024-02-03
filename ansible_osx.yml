@@ -36,7 +36,7 @@
         - android-sdk
         # - android-studio
         # - displaylink
-        # - docker
+        - docker
         - google-chrome
         # - herd
         # - iterm2
