@@ -20,11 +20,7 @@
 
     - name: "add custom homebrew repos"
       community.general.homebrew_tap:
-        name:
-          [
-            warrensbox/tap,
-            aws/tap,           
-          ]
+        name: [warrensbox/tap, aws/tap]
 
     - name: Install core packages via brew casks
       community.general.homebrew_cask:
@@ -39,6 +35,7 @@
         - docker
         - google-chrome
         # - herd
+        - inkscape
         # - iterm2
         - lastpass
         # - lens
@@ -47,15 +44,15 @@
         # - openvpn-connect
         # - pgadmin4
         - postman
-        # - powershell        
+        - powershell
         # - sublime-text
         - visual-studio-code
+        - zenmap
         # - zoom
 
     - name: "Install homebrew packages"
       community.general.homebrew:
-        name:
-          [
+        name: [
             "autoconf",
             "automake",
             # "aws-iam-authenticator",
@@ -65,21 +62,22 @@
             # "bfg",
             # "cloc",
             # "composer",
-            # "coreutils",
+            "coreutils",
             # "curl",
             # "direnv",
             "docker",
+	    "docker-compose",
             "dotnet",
             # "fluxcd/tap/flux",
             # "fzf",
-            # "gh",
+            "gh",
             # "gnu-time",
             "go",
             # "gnu-sed",
             "gpg",
             # "helm",
             # "htop",
-            # "imagemagick@6",
+            "imagemagick@6",
             # "java11",
             # "jq",
             # "kind",
@@ -91,6 +89,7 @@
             # "libyaml",
             # "mas",
             # "minikube",
+            "nmap",
             # "nvm",
             # "octant",
             "openssl",
@@ -103,7 +102,7 @@
             # "redis",
             # "rust",
             # "sqlite3",
-            # "tfswitch",
+            "tfswitch",
             # "tmux",
             # "unixodbc",
             "unzip",
@@ -113,7 +112,7 @@
             # "xz",
             # "yarn",
             # "zlib",
-             "zsh",
+            "zsh",
           ]
         state: latest
         update_homebrew: yes
@@ -204,10 +203,15 @@
     #     - ms-python.python
     #     - redhat.vscode-yaml
 
-    - git:
-        repo: https://github.com/asdf-vm/asdf.git
-        dest: "/Users/{{ lookup('env', 'USER') }}/.asdf"
-        version: v0.8.1
+    # - git:
+    #     repo: https://github.com/asdf-vm/asdf.git
+    #     dest: "/Users/{{ lookup('env', 'USER') }}/.asdf"
+    #     version: v0.8.1
+    - name: "Install asdf"
+      shell: |
+        go install github.com/asdf-vm/asdf/cmd/asdf@v0.16.2
+        mkdir -p "${ASDF_DATA_DIR:-$HOME/.asdf}/completions"
+        asdf completion zsh > "${ASDF_DATA_DIR:-$HOME/.asdf}/completions/_asdf"
 
     - name: "Create a default asdf configuration"
       template:
@@ -232,15 +236,15 @@
         pip3 install ansible
         asdf reshim python
 
-#     - name: "Install Default Ruby"
-#       shell: |
-#         source /Users/{{ lookup('env', 'USER') }}/.asdf/asdf.sh
-#         asdf install ruby 3.0.2
-#         asdf global ruby 3.0.2
-#         gem install bundler
-#         gem install cocoapods
-#         gem install rubocop
-#         gem install solargraph
+    #     - name: "Install Default Ruby"
+    #       shell: |
+    #         source /Users/{{ lookup('env', 'USER') }}/.asdf/asdf.sh
+    #         asdf install ruby 3.0.2
+    #         asdf global ruby 3.0.2
+    #         gem install bundler
+    #         gem install cocoapods
+    #         gem install rubocop
+    #         gem install solargraph
 
     - name: "Install default node"
       shell: |
@@ -248,30 +252,30 @@
         bash /Users/{{ lookup('env', 'USER') }}/.asdf/plugins/nodejs/bin/import-release-team-keyring
         asdf install nodejs 16.4.2
         asdf install nodejs 20.9.0
-        asdf global nodejs 20.9.0
+        asdf install nodejs 22.14.0
+        asdf global nodejs 22.14.0
 
-#     - name: "Install default erlang"
-#       shell: |
-#         source /Users/{{ lookup('env', 'USER') }}/.asdf/asdf.sh
-#         asdf install erlang 24.0.2
-#         asdf global  erlang 24.0.2
+    #     - name: "Install default erlang"
+    #       shell: |
+    #         source /Users/{{ lookup('env', 'USER') }}/.asdf/asdf.sh
+    #         asdf install erlang 24.0.2
+    #         asdf global  erlang 24.0.2
 
-#     - name: "Install default elixir"
-#       shell: |
-#         source /Users/{{ lookup('env', 'USER') }}/.asdf/asdf.sh
-#         asdf install elixir 1.12.3-otp-24
-#         asdf global elixir 1.12.3-otp-24
-#         mix local.hex --force
+    #     - name: "Install default elixir"
+    #       shell: |
+    #         source /Users/{{ lookup('env', 'USER') }}/.asdf/asdf.sh
+    #         asdf install elixir 1.12.3-otp-24
+    #         asdf global elixir 1.12.3-otp-24
+    #         mix local.hex --force
 
-#     - name: Install yarn packages
-#       shell: yarn global add {{ item }}
-#       with_items:
-#         - react-native-cli
-#         - create-react-app
-#         - apollo
-#         - generator-generator
-#         - yo
+    #     - name: Install yarn packages
+    #       shell: yarn global add {{ item }}
+    #       with_items:
+    #         - react-native-cli
+    #         - create-react-app
+    #         - apollo
+    #         - generator-generator
+    #         - yo
 
     - name: re-generate bins now we've installed some yarn packages
       shell: asdf reshim nodejs
-
