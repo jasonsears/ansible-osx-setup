@@ -53,6 +53,7 @@
     - name: "Install homebrew packages"
       community.general.homebrew:
         name: [
+            "asdf",
             "autoconf",
             "automake",
             # "aws-iam-authenticator",
@@ -69,6 +70,7 @@
 	    "docker-compose",
             "dotnet",
             # "fluxcd/tap/flux",
+            "flyctl",
             # "fzf",
             "gh",
             # "gnu-time",
@@ -95,7 +97,7 @@
             "openssl",
             # "php",
             # "pkg-config",
-            # "postgresql",
+            "postgresql",
             # "pyenv",
             # "rcm",
             # "readline",
@@ -207,11 +209,11 @@
     #     repo: https://github.com/asdf-vm/asdf.git
     #     dest: "/Users/{{ lookup('env', 'USER') }}/.asdf"
     #     version: v0.8.1
-    - name: "Install asdf"
-      shell: |
-        go install github.com/asdf-vm/asdf/cmd/asdf@v0.16.2
-        mkdir -p "${ASDF_DATA_DIR:-$HOME/.asdf}/completions"
-        asdf completion zsh > "${ASDF_DATA_DIR:-$HOME/.asdf}/completions/_asdf"
+    # - name: "Install asdf"
+    #   shell: |
+    #     go install github.com/asdf-vm/asdf/cmd/asdf@v0.16.2
+    #     mkdir -p "${ASDF_DATA_DIR:-$HOME/.asdf}/completions"
+    #     asdf completion zsh > "${ASDF_DATA_DIR:-$HOME/.asdf}/completions/_asdf"
 
     - name: "Create a default asdf configuration"
       template:
@@ -248,7 +250,6 @@
 
     - name: "Install default node"
       shell: |
-        source /Users/{{ lookup('env', 'USER') }}/.asdf/asdf.sh
         bash /Users/{{ lookup('env', 'USER') }}/.asdf/plugins/nodejs/bin/import-release-team-keyring
         asdf install nodejs 16.4.2
         asdf install nodejs 20.9.0
