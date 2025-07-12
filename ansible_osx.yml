@@ -67,7 +67,7 @@
             # "curl",
             # "direnv",
             "docker",
-	    "docker-compose",
+	          "docker-compose",
             "dotnet",
             # "fluxcd/tap/flux",
             "flyctl",
@@ -186,7 +186,7 @@
     #     - ms-toolsai.jupyter
     #     - ms-toolsai.jupyter-keymap
     #     - davidanson.vscode-markdownlint
-    #     - esbenp.prettier-vscode
+    #     - esbenp.prettier-vscode    
     #     - argutec.argutec-azure-repos
     #     - bencoleman.armview
     #     - ms-vscode.azure-account
@@ -224,15 +224,13 @@
 
     - name: "Install asdf plugins"
       shell: |
-        source /Users/{{ lookup('env', 'USER') }}/.asdf/asdf.sh
-        asdf plugin-add {{ item }} || exit 0
+        asdf plugin add {{ item }} || exit 0
       with_items:
         - python
         - nodejs
 
     - name: "Install Default Python"
       shell: |
-        source /Users/{{ lookup('env', 'USER') }}/.asdf/asdf.sh
         asdf install python 3.10.0
         asdf global python 3.10.0
         pip3 install ansible
@@ -250,11 +248,8 @@
 
     - name: "Install default node"
       shell: |
-        bash /Users/{{ lookup('env', 'USER') }}/.asdf/plugins/nodejs/bin/import-release-team-keyring
-        asdf install nodejs 16.4.2
         asdf install nodejs 20.9.0
         asdf install nodejs 22.14.0
-        asdf global nodejs 22.14.0
 
     #     - name: "Install default erlang"
     #       shell: |
@@ -269,14 +264,14 @@
     #         asdf global elixir 1.12.3-otp-24
     #         mix local.hex --force
 
-    #     - name: Install yarn packages
-    #       shell: yarn global add {{ item }}
-    #       with_items:
-    #         - react-native-cli
-    #         - create-react-app
-    #         - apollo
-    #         - generator-generator
-    #         - yo
+        # - name: Install yarn packages
+        #   shell: yarn global add {{ item }}
+        #   with_items:
+        #     - react-native-cli
+        #     - create-react-app
+        #     - apollo
+        #     - generator-generator
+        #     - yo
 
     - name: re-generate bins now we've installed some yarn packages
       shell: asdf reshim nodejs
