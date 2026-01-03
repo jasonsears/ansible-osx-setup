@@ -30,6 +30,7 @@
       with_items:
         # - amazon-workspaces
         - android-studio
+        - claude
         - claude-code
         - displaylink
         - docker
