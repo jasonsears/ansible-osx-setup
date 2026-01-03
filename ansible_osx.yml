@@ -232,6 +232,8 @@
     - name: "Install Default Python"
       shell: |
         asdf install python 3.10.0
+        asdf install python 3.10.19
+        asdf install python 3.11.9
         asdf global python 3.10.0
         pip3 install ansible
         asdf reshim python
