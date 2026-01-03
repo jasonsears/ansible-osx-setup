@@ -105,6 +105,7 @@
             # "redis",
             # "rust",
             "sqlite3",
+            "tailscale",
             "tfswitch",
             # "tmux",
             # "unixodbc",
