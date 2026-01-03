@@ -29,7 +29,6 @@
       ignore_errors: yes
       with_items:
         # - amazon-workspaces
-        - android-sdk
         - android-studio
         - displaylink
         - docker
