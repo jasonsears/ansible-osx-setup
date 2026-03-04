@@ -1,5 +1,7 @@
 ---
 - hosts: localhost
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
   tasks:
     - name: Create local Repos directory
       file:
@@ -29,7 +31,7 @@
       ignore_errors: yes
       with_items:
         # - amazon-workspaces
-        - android-studio
+        # - android-studio
         - claude
         - claude-code
         - displaylink
